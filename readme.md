@@ -1,8 +1,8 @@
-# coc-sol [![npm-badge]][npm]
+# coc-solidity [![npm-badge]][npm]
 
 ## Install
 
-`:CocInstall coc-sol`
+`:CocInstall coc-solidity`
 
-[npm]: https://www.npmjs.com/package/coc-sol
-[npm-badge]: https://img.shields.io/npm/v/coc-sol.svg
+[npm]: https://www.npmjs.com/package/coc-solidity
+[npm-badge]: https://img.shields.io/npm/v/coc-solidity.svg

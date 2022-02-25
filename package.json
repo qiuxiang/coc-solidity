@@ -1,10 +1,10 @@
 {
-  "name": "coc-sol",
+  "name": "coc-solidity",
   "version": "0.0.0",
   "author": "i@7c00.cc",
   "repository": {
     "type": "git",
-    "url": "https://github.com/qiuxiang/coc-sol"
+    "url": "https://github.com/qiuxiang/coc-solidity"
   },
   "keywords": [
     "coc.nvim",
@@ -43,7 +43,7 @@
   "contributes": {
     "configuration": {
       "type": "object",
-      "title": "coc-sol configuration",
+      "title": "coc-solidity configuration",
       "properties": {
         "solidity.linter": {
           "type": [
