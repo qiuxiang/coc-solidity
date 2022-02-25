@@ -7,6 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: git submodule init && git submodule update --depth 1
+      - run: npm i
+      - run: npm i
+        working-directory: vscode-solidity
       - uses: bruceadams/get-release@v1.2.3
         id: release
         env:
