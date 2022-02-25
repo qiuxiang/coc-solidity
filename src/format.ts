@@ -5,27 +5,25 @@ import {
   TextEdit,
   workspace,
 } from "coc.nvim";
-import * as path from "path";
+import { existsSync } from "fs";
+import { join } from "path";
 import * as prettier from "prettier";
 
-export default function (
+export default async function (
   document: TextDocument,
   context: ExtensionContext
-): TextEdit[] {
-  const source = document.getText();
-  const pluginPath = path.join(
-    context.extensionPath,
-    "node_modules",
-    "prettier-plugin-solidity"
-  );
+): Promise<TextEdit[]> {
+  const pluginName = "prettier-plugin-solidity";
+  let pluginPath = join(context.extensionPath, "node_modules", pluginName);
+  if (!existsSync(pluginPath)) {
+    pluginPath = join(context.extensionPath, "..", pluginName);
+  }
   const options = {
     parser: "solidity-parse",
-    pluginSearchDirs: [context.extensionPath],
     plugins: [pluginPath],
     ...prettier.resolveConfig.sync(document.uri),
   };
-  prettier.clearConfigCache();
-  const formatted = prettier.format(source, options);
+  const formatted = prettier.format(document.getText(), options);
   const lastLine = document.lineCount - 1;
   const lines = workspace.getDocument(document.uri).getline(lastLine).length;
   return [TextEdit.replace(Range.create(0, 0, lastLine, lines), formatted)];
