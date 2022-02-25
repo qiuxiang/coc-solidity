@@ -5,13 +5,11 @@ import {
   languages,
   ServerOptions,
   services,
-  workspace,
 } from "coc.nvim";
+import format from "./format";
 import path = require("path");
 
 export async function activate(context: ExtensionContext): Promise<void> {
-  context.logger.info(workspace.getConfiguration("solidity"));
-
   const module = path.join(__dirname, "server.js");
   const serverOptions: ServerOptions = {
     debug: { module },
@@ -31,13 +29,7 @@ export async function activate(context: ExtensionContext): Promise<void> {
   context.subscriptions.push(services.registLanguageClient(languageClient));
   context.subscriptions.push(
     languages.registerDocumentFormatProvider(["solidity"], {
-      provideDocumentFormattingEdits: (document, options, token) => {
-        return languageClient.sendRequest(
-          "documentFormatting",
-          { text: document.getText(), options },
-          token
-        );
-      },
+      provideDocumentFormattingEdits: (document) => format(document, context),
     })
   );
 }

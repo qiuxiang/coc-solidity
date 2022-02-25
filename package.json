@@ -11,18 +11,20 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "esbuild src/index.ts --platform=node --bundle --external:coc.nvim --outdir=dist",
-    "dev": "npm run build -- --watch",
-    "release": "npm run build -- --minify",
-    "build-server": "esbuild vscode-solidity/src/server.ts --bundle --platform=node --external:solhint --external:solium --external:glob --outdir=dist"
+    "build-server": "esbuild vscode-solidity/src/server.ts --bundle --platform=node --external:solhint --external:solium --external:glob --outdir=dist",
+    "release": "npm run build -- --minify && npm run build-server -- --minify"
   },
   "dependencies": {
     "ajv": "^8.10.0",
     "glob": "^7.2.0",
+    "prettier": "^2.5.1",
+    "prettier-plugin-solidity": "^1.0.0-beta.19",
     "solhint": "^3.3.7",
     "solium": "^1.2.5"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
+    "@types/prettier": "^2.4.4",
     "coc.nvim": "^0.0.80"
   },
   "engines": {
