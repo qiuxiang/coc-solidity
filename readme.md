@@ -1,5 +1,7 @@
 # coc-solidity [![npm-badge]][npm]
 
+Solidity language server for coc.nvim
+
 ## Install
 
 `:CocInstall coc-solidity`

@@ -1,7 +1,6 @@
 {
   "name": "coc-solidity",
   "version": "0.0.0",
-  "author": "i@7c00.cc",
   "repository": {
     "type": "git",
     "url": "https://github.com/qiuxiang/coc-solidity"
