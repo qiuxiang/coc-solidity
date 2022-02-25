@@ -22,7 +22,6 @@
   "dependencies": {
     "ajv": "^8.10.0",
     "glob": "^7.2.0",
-    "prettier": "^2.5.1",
     "prettier-plugin-solidity": "^1.0.0-beta.19",
     "solhint": "^3.3.7",
     "solium": "^1.2.5"
@@ -30,7 +29,9 @@
   "devDependencies": {
     "@types/node": "^17.0.21",
     "@types/prettier": "^2.4.4",
-    "coc.nvim": "^0.0.80"
+    "coc.nvim": "^0.0.80",
+    "esbuild": "^0.14.23",
+    "prettier": "^2.5.1"
   },
   "engines": {
     "coc": "^0.0.80"
