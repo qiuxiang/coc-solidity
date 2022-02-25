@@ -1,5 +1,5 @@
-# coc-solidity2
+# coc-sol
 
 ## Install
 
-`:CocInstall coc-solidity2`
+`:CocInstall coc-sol`
