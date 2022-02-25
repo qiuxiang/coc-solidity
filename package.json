@@ -1,0 +1,80 @@
+{
+  "name": "coc-sol",
+  "version": "0.0.0",
+  "keywords": [
+    "coc.nvim",
+    "solidity"
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "esbuild src/index.ts --platform=node --bundle --external:coc.nvim --outdir=dist",
+    "dev": "npm run build -- --watch",
+    "release": "npm run build -- --minify",
+    "build-server": "esbuild vscode-solidity/src/server.ts --bundle --platform=node --external:solhint --external:solium --external:glob --outdir=dist"
+  },
+  "dependencies": {
+    "ajv": "^8.10.0",
+    "glob": "^7.2.0",
+    "solhint": "^3.3.7",
+    "solium": "^1.2.5"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "coc.nvim": "^0.0.80"
+  },
+  "engines": {
+    "coc": "^0.0.80"
+  },
+  "activationEvents": [
+    "onLanguage:solidity"
+  ],
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "coc-solidity2 configuration",
+      "properties": {
+        "solidity.linter": {
+          "type": [
+            "boolean",
+            "string"
+          ],
+          "default": "solhint",
+          "description": "Enables solhint linting. Possible options 'solhint' and 'solium'"
+        },
+        "solidity.enabledAsYouTypeCompilationErrorCheck": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enables as you type compilation of the document and error highlighting"
+        },
+        "solidity.packageDefaultDependenciesDirectory": {
+          "type": "string",
+          "default": "node_modules",
+          "description": "Default directory for Packages Dependencies, i.e: 'node_modules', 'lib'. This is used to avoid typing imports with that path prefix"
+        },
+        "solidity.packageDefaultDependenciesContractsDirectory": {
+          "type": "string",
+          "default": "",
+          "description": "Default directory where the Package Dependency store its contracts, i.e: 'src', 'contracts', or just a blank string '', this is used to avoid typing imports with subfolder paths"
+        },
+        "solidity.remappings": {
+          "type": "array",
+          "default": [],
+          "description": "Remappings to resolve contracts to local files / directories, i.e: [\"@openzeppelin/=lib/openzeppelin-contracts\",\"ds-test/=lib/ds-test/src/\"]"
+        },
+        "solidity.remappingsWindows": {
+          "type": "array",
+          "default": [],
+          "description": "Remappings to resolve contracts to local Windows files / directories, i.e: [\"@openzeppelin/=C:/lib/openzeppelin-contracts\",\"ds-test/=C:/lib/ds-test/src/\"]"
+        },
+        "solidity.remappingsUnix": {
+          "type": "array",
+          "default": [],
+          "description": "Remappings to resolve contracts to local Unix files / directories, i.e: [\"@openzeppelin/=/opt/lib/openzeppelin-contracts\",\"ds-test/=/opt/lib/ds-test/src/\"]"
+        }
+      }
+    }
+  }
+}
