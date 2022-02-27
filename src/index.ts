@@ -11,10 +11,7 @@ import path = require("path");
 
 export async function activate(context: ExtensionContext): Promise<void> {
   const module = path.join(__dirname, "server.js");
-  const serverOptions: ServerOptions = {
-    debug: { module },
-    run: { module, options: { execArgv: ["--inspect"] } },
-  };
+  const serverOptions: ServerOptions = { debug: { module }, run: { module } };
   const clientOptions: LanguageClientOptions = {
     documentSelector: ["solidity"],
     synchronize: { configurationSection: "solidity" },
