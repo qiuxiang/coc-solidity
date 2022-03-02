@@ -1,32 +1,40 @@
 import {
   ExtensionContext,
+  Hover,
   LanguageClient,
-  LanguageClientOptions,
   languages,
-  ServerOptions,
   services,
 } from "coc.nvim";
+import { join } from "path";
 import format from "./format";
-import path = require("path");
 
 export async function activate(context: ExtensionContext): Promise<void> {
-  const module = path.join(__dirname, "server.js");
-  const serverOptions: ServerOptions = { debug: { module }, run: { module } };
-  const clientOptions: LanguageClientOptions = {
-    documentSelector: ["solidity"],
-    synchronize: { configurationSection: "solidity" },
-    initializationOptions: context.extensionPath,
-  };
   const languageClient = new LanguageClient(
     "solidity",
     "Solidity Language Server",
-    serverOptions,
-    clientOptions
+    {
+      module: join(__dirname, "..", "..", "solidity-language-server"),
+      options: { execArgv: ["--inspect-brk"] },
+    },
+    {
+      documentSelector: ["solidity"],
+      synchronize: { configurationSection: "solidity" },
+    }
   );
   context.subscriptions.push(services.registLanguageClient(languageClient));
   context.subscriptions.push(
     languages.registerDocumentFormatProvider(["solidity"], {
       provideDocumentFormattingEdits: (document) => format(document, context),
+    })
+  );
+  context.subscriptions.push(
+    languages.registerHoverProvider(["solidity"], {
+      provideHover: (document, position) => {
+        return languageClient.sendRequest<Hover>("textDocument/hover", {
+          textDocument: document,
+          position,
+        });
+      },
     })
   );
 }
