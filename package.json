@@ -16,18 +16,15 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "esbuild src/index.ts --platform=node --bundle --external:coc.nvim --outdir=dist",
-    "build-server": "esbuild vscode-solidity/src/server.ts --bundle --platform=node --external:solhint --external:solium --external:glob --external:solc --outdir=dist",
-    "release": "npm run build -- --minify && npm run build-server -- --minify"
+    "release": "npm run build -- --minify"
   },
   "dependencies": {
     "prettier-plugin-solidity": "^1.0.0-beta.19"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
-    "@types/prettier": "^2.4.4",
     "coc.nvim": "^0.0.80",
-    "esbuild": "^0.14.23",
-    "prettier": "^2.5.1"
+    "esbuild": "^0.14.23"
   },
   "engines": {
     "coc": "^0.0.80"
