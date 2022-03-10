@@ -15,16 +15,11 @@
   ],
   "main": "dist/index.js",
   "scripts": {
-    "build": "esbuild src/index.ts --platform=node --bundle --external:coc.nvim --outdir=dist",
-    "release": "npm run build -- --minify"
-  },
-  "dependencies": {
-    "prettier-plugin-solidity": "^1.0.0-beta.19"
+    "build": "esbuild src/index.ts --platform=node --bundle --external:coc.nvim --outdir=dist"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
-    "coc.nvim": "^0.0.80",
-    "esbuild": "^0.14.23"
+    "coc.nvim": "^0.0.80"
   },
   "engines": {
     "coc": "^0.0.80"
