@@ -50,6 +50,8 @@ completion, rename, code actions.
 * formatting (by prettier-plugin-solidity)
 * go to definition
 
+*New features have not been published to npm yet. But soon, after I open source this solidity language server project.*
+
 ## Install
 
 `:CocInstall coc-solidity`
