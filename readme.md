@@ -7,8 +7,8 @@ coc.nvim extension for solidity. Language server provided by [solidity-ls](https
 
 <img width="276" alt="image" src="https://user-images.githubusercontent.com/1709072/159026514-4d178c66-336c-46c3-b647-37d8ed048568.png"><img width="276" alt="image" src="https://user-images.githubusercontent.com/1709072/159026797-af4de669-49ff-4036-b6b0-0ea42a68a019.png"><img width="276" alt="image" src="https://user-images.githubusercontent.com/1709072/159030410-65a68fe6-bc77-45e2-aa8a-b305fbb01b17.png">
 
-**[solidity-ls](https://github.com/qiuxiang/solidity-ls) currently has no tolerance.**
-Means that some completions will only work if sources are no syntax error.
+**[solidity-ls](https://github.com/qiuxiang/solidity-ls) has no tolerance.**
+Means that some features will only work if sources are no syntax error.
 
 For example:
 
@@ -17,11 +17,10 @@ For example:
 msg.
    ^
 
-// should work fine
+// should work
 msg.;
    ^
 ```
-
 
 # Features
 
@@ -63,6 +62,8 @@ msg.;
     <img width="679" alt="image" src="https://user-images.githubusercontent.com/1709072/159701108-0b31cc23-2c53-433b-88e5-825946c71574.png">
   </details>
 - formatting (by prettier-plugin-solidity)
+- rename
+- go to references
 - go to definition
 
 ## Install
@@ -72,4 +73,5 @@ msg.;
 # TODO
 
 - [ ] code actions
-- [ ] rename
+- [ ] signature help
+- [ ] semantic tokens
