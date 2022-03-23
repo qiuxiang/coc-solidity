@@ -10,7 +10,7 @@ coc.nvim extension for solidity. Language server provided by [solidity-ls](https
 **Note: The project is in early stages.**
 
 [solidity-ls](https://github.com/qiuxiang/solidity-ls) lack of tolerance currently.
-This means that some completions will only work if sources no syntax errors.
+This means that some completions will only work if sources are no syntax error.
 
 # Features
 
