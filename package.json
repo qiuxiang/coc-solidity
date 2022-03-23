@@ -1,7 +1,6 @@
 {
   "name": "coc-solidity",
   "description": "Solidity language server for coc.nvim",
-  "version": "0.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/qiuxiang/coc-solidity"
@@ -11,11 +10,14 @@
     "solidity"
   ],
   "files": [
-    "dist"
+    "dist/index.js"
   ],
   "main": "dist/index.js",
   "scripts": {
     "build": "esbuild src/index.ts --platform=node --bundle --external:coc.nvim --outdir=dist"
+  },
+  "dependencies": {
+    "solidity-ls": "^0.0.1"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
