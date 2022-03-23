@@ -1,20 +1,20 @@
+[npm]: https://www.npmjs.com/package/coc-solidity
+[npm-badge]: https://img.shields.io/npm/v/coc-solidity.svg
+
 # coc-solidity [![npm-badge]][npm]
 
-Solidity language server for coc.nvim.
+coc.nvim extension for solidity. Language server provided by [solidity-ls](https://github.com/qiuxiang/solidity-ls).
+
+<img width="250" alt="image" src="https://user-images.githubusercontent.com/1709072/159023964-24d7459f-3dfd-4b5e-8b05-252cb1ea106c.png"><img width="250" alt="image" src="https://user-images.githubusercontent.com/1709072/159026514-4d178c66-336c-46c3-b647-37d8ed048568.png"><img width="250" alt="image" src="https://user-images.githubusercontent.com/1709072/159026797-af4de669-49ff-4036-b6b0-0ea42a68a019.png"><img width="250" alt="image" src="https://user-images.githubusercontent.com/1709072/159030410-65a68fe6-bc77-45e2-aa8a-b305fbb01b17.png">
 
 **Note: The project is in early stages.**
 
-Previous version used [vscode-solidity](https://github.com/juanfranblanco/vscode-solidity)'s language server 
-that has some missing features. So I consider rewriting a new solidity language server. 
- 
-New LS used solidity official compiler solc to generate AST. Unlike third party parser, solc's AST more detailed and reliable.
-The downside is lack of tolerance. This means that some completions will only work if there are no syntax errors.
-To solve this problem I need to implement error recovery, but before that I plan to implement the main features likes
-completion, rename, code actions.
+[solidity-ls](https://github.com/qiuxiang/solidity-ls) lack of tolerance currently.
+This means that some completions will only work if sources no syntax errors.
 
 # Features
 
-* completion
+- completion
   - <details>
       <summary>local variables, state variables, functions</summary>
       <img width="645" alt="image" src="https://user-images.githubusercontent.com/1709072/159023964-24d7459f-3dfd-4b5e-8b05-252cb1ea106c.png">
@@ -37,26 +37,21 @@ completion, rename, code actions.
       <summary>external contract functions</summary>
       <img width="645" alt="image" src="https://user-images.githubusercontent.com/1709072/159026514-4d178c66-336c-46c3-b647-37d8ed048568.png">
     </details>
-* <details>
+- <details>
     <summary>diagnostics</summary>
     <img width="645" alt="image" src="https://user-images.githubusercontent.com/1709072/159026797-af4de669-49ff-4036-b6b0-0ea42a68a019.png">
     <img width="645" alt="image" src="https://user-images.githubusercontent.com/1709072/159026860-13649b4d-8e5a-447c-8c4d-09b18e8ec7d4.png">
   </details>
-* <details>
+- <details>
     <summary>hover documention</summary>
     <img width="645" alt="image" src="https://user-images.githubusercontent.com/1709072/159030410-65a68fe6-bc77-45e2-aa8a-b305fbb01b17.png">
   </details>
-* formatting (by prettier-plugin-solidity)
-* go to definition
-
-*New features have not been published to npm yet. But soon, after I open source this solidity language server project.*
+- formatting (by prettier-plugin-solidity)
+- go to definition
 
 ## Install
 
 `:CocInstall coc-solidity`
-
-[npm]: https://www.npmjs.com/package/coc-solidity
-[npm-badge]: https://img.shields.io/npm/v/coc-solidity.svg
 
 # TODO
 
