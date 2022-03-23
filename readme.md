@@ -56,6 +56,11 @@ msg.;
 - <details>
     <summary>hover documention</summary>
     <img width="645" alt="image" src="https://user-images.githubusercontent.com/1709072/159030410-65a68fe6-bc77-45e2-aa8a-b305fbb01b17.png">
+    <img width="679" alt="image" src="https://user-images.githubusercontent.com/1709072/159701108-0b31cc23-2c53-433b-88e5-825946c71574.png">
+  </details>
+- <details>
+    <summary>references</summary>
+    <img width="679" alt="image" src="https://user-images.githubusercontent.com/1709072/159701108-0b31cc23-2c53-433b-88e5-825946c71574.png">
   </details>
 - formatting (by prettier-plugin-solidity)
 - go to definition
