@@ -70,7 +70,7 @@ msg.;
 
 `:CocInstall coc-solidity`
 
-# TODO
+# Todo
 
 - [ ] code actions
 - [ ] signature help
