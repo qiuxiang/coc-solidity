@@ -38,6 +38,11 @@
           "type": "string",
           "default": "node_modules",
           "description": "Default directory for Packages Dependencies, i.e: 'node_modules', 'lib'. This is used to avoid typing imports with that path prefix"
+        },
+        "solidity.remappings": {
+          "type": "array",
+          "default": [],
+          "description": "Remappings to resolve contracts to local files / directories, i.e: [\"@openzeppelin/=lib/openzeppelin-contracts\",\"ds-test/=lib/ds-test/src/\"]"
         }
       }
     }
