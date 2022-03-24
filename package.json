@@ -17,7 +17,7 @@
     "build": "esbuild src/index.ts --platform=node --bundle --external:coc.nvim --outdir=dist"
   },
   "dependencies": {
-    "solidity-ls": "^0.2.1"
+    "solidity-ls": "^0.2.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
@@ -37,12 +37,11 @@
         "solidity.includePath": {
           "type": "string",
           "default": "node_modules",
-          "description": "Default directory for Packages Dependencies, i.e: 'node_modules', 'lib'. This is used to avoid typing imports with that path prefix"
+          "description": "Make an additional source directory available to the default import callback. Use this option if you want to import contracts whose location is not fixed in relation to your main source tree, e.g. third-party libraries installed using a package manager. Can be used multiple times. Can only be used if base path has a non-empty value."
         },
-        "solidity.remappings": {
-          "type": "array",
-          "default": [],
-          "description": "Remappings to resolve contracts to local files / directories, i.e: [\"@openzeppelin/=lib/openzeppelin-contracts\",\"ds-test/=lib/ds-test/src/\"]"
+        "solidity.remapping": {
+          "type": "object",
+          "description": "Import remapping allows you to redirect imports to a different location in the virtual filesystem. The mechanism works by changing the translation between import paths and source unit names. For example you can set up a remapping so that any import from the virtual directory github.com/ethereum/dapp-bin/library/ would be seen as an import from dapp-bin/library/ instead."
         }
       }
     }
