@@ -14,7 +14,7 @@
   ],
   "main": "dist/index.js",
   "scripts": {
-    "build": "esbuild src/index.ts --platform=node --bundle --external:coc.nvim --outdir=dist"
+    "build": "esbuild src/index.ts --platform=node --bundle --external:coc.nvim --external:solidity-ls --outdir=dist"
   },
   "dependencies": {
     "solidity-ls": "^0.3.0"
