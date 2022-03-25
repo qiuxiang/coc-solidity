@@ -63,6 +63,7 @@ msg.;
   </details>
 - formatting (by prettier-plugin-solidity)
 - rename
+- signature help (basic implementation)
 - go to references
 - go to definition
 
@@ -73,5 +74,4 @@ msg.;
 # Todo
 
 - [ ] code actions
-- [ ] signature help
 - [ ] semantic tokens
