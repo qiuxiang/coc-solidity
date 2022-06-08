@@ -6,7 +6,8 @@ export async function activate(context: ExtensionContext): Promise<void> {
     "Solidity Language Server",
     {
       module: require.resolve("solidity-ls"),
-      // options: { execArgv: ["--inspect"] },
+      // module: require("path").join(__dirname, "..", "..", "solidity-ls"),
+      // options: { execArgv: ["--inspect-brk"] },
     },
     {
       documentSelector: ["solidity"],

@@ -71,6 +71,8 @@ msg.;
 
 `:CocInstall coc-solidity`
 
+Make sure you have installed [solc](https://github.com/ethereum/solidity/releases/latest).
+
 # Todo
 
 - [ ] code actions
