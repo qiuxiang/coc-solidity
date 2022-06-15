@@ -7,12 +7,11 @@ export async function activate(context: ExtensionContext): Promise<void> {
     {
       module: require.resolve("solidity-ls"),
       // module: require("path").join(__dirname, "..", "..", "solidity-ls"),
-      // options: { execArgv: ["--inspect-brk"] },
+      // options: { execArgv: ["--inspect"] },
     },
     {
       documentSelector: ["solidity"],
       synchronize: { configurationSection: "solidity" },
-      initializationOptions: { extensionPath: context.extensionPath },
     }
   );
   context.subscriptions.push(services.registLanguageClient(languageClient));
