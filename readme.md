@@ -73,6 +73,10 @@ msg.;
 
 Make sure you have installed [solc](https://github.com/ethereum/solidity/releases/latest).
 
+### foundry supports
+
+run `forge remappings > remappings.txt` in project root.
+
 # Todo
 
 - [ ] code actions
