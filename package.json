@@ -17,11 +17,11 @@
     "build": "esbuild src/index.ts --platform=node --bundle --external:coc.nvim --external:solidity-ls --outdir=dist"
   },
   "dependencies": {
-    "solidity-ls": "^0.5.2"
+    "solidity-ls": "^0.5.3"
   },
   "devDependencies": {
-    "@types/node": "^17.0.21",
-    "coc.nvim": "^0.0.80"
+    "coc.nvim": "0.0.83-next.9",
+    "esbuild": "^0.18.17"
   },
   "engines": {
     "coc": "^0.0.80"
